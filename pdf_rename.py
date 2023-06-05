@@ -20,7 +20,8 @@ for filename in os.listdir(directory):
     # Extract the PDF title from the metadata
     with open(filepath, 'rb') as file:
         pdf_reader = PdfReader(file)
-        pdf_title = pdf_reader.getDocumentInfo().title.strip()
+        pdf_metadata = pdf_reader.metadata
+        pdf_title = pdf_metadata.get('/Title', '').strip()
 
     # Sanitize the filename
     sanitized_title = sanitize_filename(pdf_title)
