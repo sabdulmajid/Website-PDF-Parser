@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import os
+import re
 
 # Define the URL of the website
 url = "https://cs.uwaterloo.ca/~cbruni/CS241Resources/lectures/2019_Winter/"
@@ -21,8 +22,8 @@ os.makedirs(directory, exist_ok=True)
 # Function to sanitize the file name
 def sanitize_filename(filename):
     # Replace disallowed characters with underscores
-    filename = filename.replace("_", ": ")
-    filename = filename.replace(".pdf", "")
+    filename = re.sub(r'[<>:"/\\|?*]', '_', filename)
+    filename = filename.replace('.pdf', '')
     return filename
 
 # Iterate over the lecture links and download the PDF files
