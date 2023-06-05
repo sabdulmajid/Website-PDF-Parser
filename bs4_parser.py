@@ -1,16 +1,15 @@
-import urllib.request
+import requests
 from bs4 import BeautifulSoup
 import os
-import re
 
 # Define the URL of the website
-url = "https://cs.uwaterloo.ca/~cbruni/CS241Resources/index.php"
+url = "https://cs.uwaterloo.ca/~cbruni/CS241Resources/lectures/2019_Winter/"
 
 # Send a GET request to the website
-response = urllib.request.urlopen(url)
+response = requests.get(url)
 
 # Parse the HTML content of the website using BeautifulSoup
-soup = BeautifulSoup(response, 'html.parser')
+soup = BeautifulSoup(response.content, 'html.parser')
 
 # Find all the <a> tags with the lecture links
 lecture_links = soup.find_all('a')
@@ -22,32 +21,31 @@ os.makedirs(directory, exist_ok=True)
 # Function to sanitize the file name
 def sanitize_filename(filename):
     # Replace disallowed characters with underscores
-    filename = re.sub(r'[<>:"/\\|?*]', '_', filename)
+    filename = filename.replace("_", ": ")
+    filename = filename.replace(".pdf", "")
     return filename
 
-# Iterate over the lecture links and download the files
+# Iterate over the lecture links and download the PDF files
 for link in lecture_links:
-    # Get the lecture title from the link text
-    lecture_title = link.text.strip()
-    
     # Get the lecture file URL
-    lecture_url = link['href']
+    lecture_file_url = url + link['href']
     
     # Skip non-PDF files
-    if not lecture_url.endswith('.pdf'):
+    if not lecture_file_url.endswith('.pdf'):
         continue
     
-    # Construct the complete lecture file URL
-    lecture_file_url = url + lecture_url[1:]  # Removing the leading dot (.) from the relative URL
+    # Send a GET request to download the lecture file
+    lecture_response = requests.get(lecture_file_url)
     
-    # Sanitize the lecture title for the file name
-    sanitized_title = sanitize_filename(lecture_title)
+    # Get the lecture title from the file name
+    lecture_title = sanitize_filename(link['href'])
     
     # Save the lecture file with the appropriate title and extension
-    filename = sanitized_title + '.pdf'
+    filename = lecture_title + '.pdf'
     filepath = os.path.join(directory, filename)
     
-    urllib.request.urlretrieve(lecture_file_url, filepath)
+    with open(filepath, 'wb') as file:
+        file.write(lecture_response.content)
     
     print(f"Downloaded: {filename}")
 
