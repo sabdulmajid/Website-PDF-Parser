@@ -2,25 +2,25 @@ import os
 import re
 
 pdf_directory = r'path\to\pdf\files'
-output_file = 'lectures_arranged2.txt'
+output_file = 'lectures_arranged3.txt'
 
 # Get the list of PDF files in the directory
 pdf_files = [file for file in os.listdir(pdf_directory) if file.lower().endswith('.pdf')]
 
-# Extract lecture numbers from the file names using regular expressions
-lecture_numbers = []
+# Extract lecture names from the file names using regular expressions
+lecture_names = []
 for pdf_file in pdf_files:
-    match = re.search(r'Lecture (\d+)', pdf_file)
+    match = re.search(r'Lecture \d+ - (.+)\.pdf', pdf_file)
     if match:
-        lecture_number = int(match.group(1))
-        lecture_numbers.append((pdf_file, lecture_number))
+        lecture_name = match.group(1)
+        lecture_names.append(lecture_name)
 
-# Sort the list of files based on lecture numbers
-sorted_files = sorted(lecture_numbers, key=lambda x: x[1])
+# Sort the list of lecture names
+sorted_names = sorted(lecture_names)
 
-# Append sorted PDF file names (without extension) to the output file
+# Append sorted lecture names to the output file
 with open(output_file, 'w') as file:
-    for pdf_file, _ in sorted_files:
-        file.write(os.path.splitext(pdf_file)[0] + '\n')
+    for lecture_name in sorted_names:
+        file.write(lecture_name + '\n')
 
-print("File names sorted and appended successfully.")
+print("Lecture names sorted and appended successfully.")

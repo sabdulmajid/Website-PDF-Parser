@@ -1,23 +1,23 @@
-Lecture 1 - Introduction and Binary Encoding
-Lecture 2 - Characters and Machine Language
-Lecture 3 - More on Machine Language
-Lecture 4 - Procedures
-Lecture 5 - Assembler and Formal Languages
-Lecture 6 - Deterministic Finite Automata
-Lecture 7 - Non-Deterministic Finite Automata
-Lecture 8 - Non-Deterministic Finite Automata with -transitions
-Lecture 9 - Maximal Munch and Context Free Grammars
-Lecture 10 - Context Free Grammars, Ambiguity, Top Down Parsing
-Lecture 11 - Top Down Parsing, First and Follow
-Lecture 12 - Top Down Parsing, First and Follow Continued
-Lecture 13 - Bottom Up Parsing
-Lecture 14 - Bottom Up Parsing Continued
-Lecture 15 - Bottom Up Parsing Continued
-Lecture 16 - Type Checking Continued and Code Generation
-Lecture 17 - Type Checking Continued and Code Generation
-Lecture 18 - Code Generation Continued
-Lecture 19 - Code Generation Continued Again!
-Lecture 20 - Code Generation Procedures
-Lecture 21 - Heap Management
-Lecture 22 - Heap Management and Loaders
-Lecture 23 - Linking
+Introduction and Binary Encoding
+Characters and Machine Language
+More on Machine Language
+Procedures
+Assembler and Formal Languages
+Deterministic Finite Automata
+Non-Deterministic Finite Automata
+Non-Deterministic Finite Automata with -transitions
+Maximal Munch and Context Free Grammars
+Context Free Grammars, Ambiguity, Top Down Parsing
+Top Down Parsing, First and Follow
+Top Down Parsing, First and Follow Continued
+Bottom Up Parsing
+Bottom Up Parsing Continued
+Bottom Up Parsing Continued
+Type Checking Continued and Code Generation
+Type Checking Continued and Code Generation
+Code Generation Continued
+Code Generation Continued Again!
+Code Generation Procedures
+Heap Management
+Heap Management and Loaders
+Linking
