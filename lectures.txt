@@ -1,0 +1,23 @@
+Lecture 1 - Introduction and Binary Encoding.pdf
+Lecture 10 - Context Free Grammars, Ambiguity, Top Down Parsing.pdf
+Lecture 11 - Top Down Parsing, First and Follow.pdf
+Lecture 12 - Top Down Parsing, First and Follow Continued.pdf
+Lecture 13 - Bottom Up Parsing.pdf
+Lecture 14 - Bottom Up Parsing Continued.pdf
+Lecture 15 - Bottom Up Parsing Continued.pdf
+Lecture 16 - Type Checking Continued and Code Generation.pdf
+Lecture 17 - Type Checking Continued and Code Generation.pdf
+Lecture 18 - Code Generation Continued.pdf
+Lecture 19 - Code Generation Continued Again!.pdf
+Lecture 2 - Characters and Machine Language.pdf
+Lecture 20 - Code Generation Procedures.pdf
+Lecture 21 - Heap Management.pdf
+Lecture 22 - Heap Management and Loaders.pdf
+Lecture 23 - Linking.pdf
+Lecture 3 - More on Machine Language.pdf
+Lecture 4 - Procedures.pdf
+Lecture 5 - Assembler and Formal Languages.pdf
+Lecture 6 - Deterministic Finite Automata.pdf
+Lecture 7 - Non-Deterministic Finite Automata.pdf
+Lecture 8 - Non-Deterministic Finite Automata with -transitions.pdf
+Lecture 9 - Maximal Munch and Context Free Grammars.pdf
